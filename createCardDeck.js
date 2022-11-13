@@ -9,19 +9,20 @@ const getDeck = () => {
   // 'Ace' will have a val of 11
   const deck = [];
   const suits = ['hearts', 'spades', 'clubs', 'diamonds'];
-  const displayColors = { 1: 'Ace', 11: 'Jack', 12: 'Queen', 13: 'King' };
+  const royalCard = { 1: 'Ace', 11: 'Jack', 12: 'Queen', 13: 'King' };
   const isNumberedCard = n => n >= 2 && n <= 10;
   const isAce = n => n === 1; 
 
-  for (let suit of suits) {
-    for (let num = 1; num <= 13; num++) {
+  for (let i=0; i < suits.length; i++) {
+    for (let j = 1; j <= 13; j++) {
       const card =
       {
-        val: isNumberedCard(num) ? num : isAce(num) ? 11 : 10,
-        displayVal: isNumberedCard(num) ? num : displayColors[num],
-        suit
+        val: isNumberedCard(j) ? j : isAce(j) ? 11 : 10,
+        displayVal: isNumberedCard(j) ? j : royalCard[j],
+        suit: suits[i]
       };
-      console.log(num, card);
+      // for testing
+      //console.log(j, card);
       deck.push(card);
     }
   }
