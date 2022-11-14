@@ -21,5 +21,8 @@ const foodIsCooked = function(kind, internalTemp, doneness) {
 console.log(foodIsCooked('chicken', 90)); // should be false
 console.log(foodIsCooked('chicken', 190)); // should be true
 console.log(foodIsCooked('beef', 138, 'well')); // should be false
-console.log(foodIsCooked('beef', 138, 'medium')); // should be true
+console.log(foodIsCooked('beef', 156, 'well')); // should be true
+console.log(foodIsCooked('beef', 138, 'medium')); // should be false
+console.log(foodIsCooked('beef', 139, 'medium')); // should be true
+console.log(foodIsCooked('beef', 124, 'rare')); // should be false
 console.log(foodIsCooked('beef', 138, 'rare')); // should be true
